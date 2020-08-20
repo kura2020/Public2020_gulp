@@ -40,20 +40,20 @@ jobs:
           
       # ここから Sharepointにデプロイ
       # o365 コマンドツールのインストール
-      - run:
-          command: npm install @pnp/office365-cli
-          working_directory: ./helloworld-webpart
-      
-      - run: sudo npm link @pnp/office365-cli
+#      - run:
+#          command: npm install @pnp/office365-cli
+#          working_directory: ./helloworld-webpart
+#      
+#      - run: sudo npm link @pnp/office365-cli
       
       # ログイン・デプロイを実行
-      - run:
-          command: o365 login -t password -u $USERNAME -p $PASSWORD
-      
-      - run:
-          command: o365 spo app add -p ./helloworld-webpart/sharepoint/solution/helloworld-webpart.sppkg --overwrite
-      - run:
-          command: o365 spo app deploy --name helloworld-webpart.sppkg
+#      - run:
+#          command: o365 login -t password -u $USERNAME -p $PASSWORD
+#      
+#      - run:
+#          command: o365 spo app add -p ./helloworld-webpart/sharepoint/solution/helloworld-webpart.sppkg --overwrite
+#      - run:
+#          command: o365 spo app deploy --name helloworld-webpart.sppkg
 
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.1
